@@ -1,0 +1,26 @@
+<% layout('layout') %>
+
+<div class="container">
+  <h2 class="section-title"><%= title %></h2>
+  <div class="uploads-grid">
+    <% if (files.length === 0) { %>
+      <p>No uploads yet. <a href="/upload">Upload a file →</a></p>
+    <% } else { %>
+      <% files.forEach(file => { %>
+        <div class="card">
+          <a href="/f/<%= file.id %>">
+            <img src="/uploads/<%= file.filename %>" alt="<%= file.original %>"/>
+          </a>
+          <div class="file-info">
+            <h3><a href="/f/<%= file.id %>"><%= file.original %></a></h3>
+            <p>
+              <time datetime="<%= file.createdAt.toISOString() %>">
+                <%= file.createdAt.toLocaleString() %>
+              </time>
+            </p>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head>
+  <title><%= title || 'File Host' %></title>
+  <link rel="stylesheet" href="/public/css/style.css">
+  <% if (typeof meta !== 'undefined' && meta) { %>
+    <meta property="og:site_name" content="<%= meta.site_name %>">
+    <meta property="og:title" content="<%= meta.title %>">
+    <meta property="og:description" content="<%= meta.description %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= meta.url %>">
+    <meta property="og:image" content="<%= meta.image %>">
+    <meta property="og:image:type" content="<%= meta.image_type %>">
+    <meta property="og:image:width" content="<%= meta.image_width %>">
+    <meta property="og:image:height" content="<%= meta.image_height %>">
+    <meta name="twitter:card" content="<%= meta.twitter_card %>">
+    <meta name="twitter:title" content="<%= meta.title %>">
+    <meta name="twitter:description" content="<%= meta.description %>">
+    <meta name="twitter:image" content="<%= meta.image %>">
+  <% } %>
+</head><body>
+  <nav>
+    <% if(user){ %>
+      Hello <%= user.username %> |
+      <a href="/my-uploads">My Uploads</a> |
+      <a href="/upload">Upload</a> |
+      <% if(user.isAdmin){ %><a href="/admin">Admin</a> |<% } %>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">Login</a> |
+      <a href="/signup">Sign Up</a>
+    <% } %>
+  </nav><hr/>
+  <%- body %>
+</body></html>

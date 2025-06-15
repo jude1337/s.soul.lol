@@ -1,0 +1,29 @@
+<% layout('layout') %>
+
+<div class="container">
+  <h2 class="section-title"><%= title || 'Admin Dashboard' %></h2>
+  <div class="card table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Uploader</th>
+          <th>IP Address</th>
+          <th>Size (KB)</th>
+          <th>Uploaded At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% files.forEach(f => { %>
+          <tr>
+            <td><a href="/f/<%= f.id %>"><%= f.original %></a></td>
+            <td><%= f.uploader.username %></td>
+            <td><%= f.ip %></td>
+            <td><%= (f.size/1024).toFixed(2) %></td>
+            <td><%= f.createdAt.toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>

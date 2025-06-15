@@ -1,0 +1,14 @@
+<% layout('layout') %>
+
+<div class="container">
+  <div class="card">
+    <h2 style="color: var(--accent-color); margin-top: 0;">Upload a File</h2>
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+      <div class="form-field">
+        <input type="file" name="file" id="file" placeholder=" " required />
+        <label for="file">Choose file</label>
+      </div>
+      <button type="submit" class="btn">Upload</button>
+    </form>
+  </div>
+</div>
