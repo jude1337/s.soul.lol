@@ -1,0 +1,292 @@
+:root {
+  --bg-color:        #121212;
+  --text-color:      #e0e0e0;
+  --accent-color:    #1db954;
+  --card-bg:         #1e1e1e;
+  --border-radius:   12px;
+  --transition-time: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all var(--transition-time) ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+nav {
+  background: var(--card-bg);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+nav a {
+  color: var(--text-color);
+  margin-right: 1.5rem;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--accent-color);
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  margin-bottom: 2rem;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card .file-info {
+  padding: 1.5rem;
+}
+.card .file-info h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: var(--accent-color);
+}
+.card .file-info p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+/* Form container */
+.form-card {
+  max-width: 400px;
+  margin: 4rem auto;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating labels */
+.form-field {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+.form-field input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.25rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #555;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .3s;
+}
+.form-field input:focus {
+  border-color: var(--accent-color);
+}
+.form-field label {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  color: #888;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: transform .2s, font-size .2s, color .2s;
+}
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem);
+  font-size: 0.85rem;
+  color: var(--accent-color);
+}
+
+/* Buttons */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--accent-color);
+  border: none;
+  border-radius: var(--border-radius);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: background .3s, transform .2s;
+}
+.btn:hover {
+  background: #1ed760;
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Page title */
+.form-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 1.8rem;
+}
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0b0f17 0%, #1f2833 100%);
+  padding: 4rem 0;
+  color: var(--text-color);
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-text .lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+.btn-cta {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background .3s;
+}
+.btn-cta:hover {
+  background: #1ed760;
+}
+
+/* Hero image */
+.hero-image img {
+  max-width: 400px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Features */
+.features {
+  padding: 4rem 0;
+  text-align: center;
+}
+.features .section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.feature {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  transition: transform .3s, box-shadow .3s;
+}
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+}
+.feature .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+.feature h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.feature p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+/* === Upload Form & Admin Card === */
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Re-use the same “card” style */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform .3s, box-shadow .3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+}
+
+/* Admin table inside a card */
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.table-card th,
+.table-card td {
+  border: 1px solid #333;
+  padding: 0.75rem;
+  text-align: left;
+  color: var(--text-color);
+}
+.table-card th {
+  background: #222;
+}
+.table-card tbody tr:nth-child(even) {
+  background: #1a1a1a;
+}
+.table-card a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+.table-card a:hover {
+  text-decoration: underline;
+}
+/* My Uploads grid */
+.uploads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.uploads-grid .card img {
+  height: 160px;
+  object-fit: cover;
+}
+
+
